@@ -1,4 +1,8 @@
 FROM node:20 as builder
+
+# Actualizar npm
+RUN npm install -g npm@latest
+
 WORKDIR /app
 COPY . .
 RUN npm install
@@ -8,16 +12,15 @@ RUN npm run build
 FROM nginx:alpine
 COPY --from=builder /app/dist/docker-visor/browser /usr/share/nginx/html
 
-
-
-# Etapa de compilación
+###
 ###FROM node:20 as builder
 ###WORKDIR /app
-###COPY package.json package-lock.json ./
-###RUN npm install -g yarn
-###RUN yarn install
-###RUN yarn run build
+###COPY . .
+###RUN npm install
+###RUN npm run build
 ###
-#### Etapa de producción con Nginx
+#### Etapa de producción
 ###FROM nginx:alpine
 ###COPY --from=builder /app/dist/docker-visor/browser /usr/share/nginx/html
+###
+
