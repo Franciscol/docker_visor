@@ -20,4 +20,4 @@ RUN yarn run build
 
 # Etapa de producción con Nginx
 FROM nginx:alpine
-COPY --from=builder /app/dist/visor-standalone/browser /usr/share/nginx/html
+COPY --from=builder /app/dist/docker-visor/browser /usr/share/nginx/html
