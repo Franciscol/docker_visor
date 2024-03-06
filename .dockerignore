@@ -1,0 +1,19 @@
+# Excluir archivos y carpetas generados por Node.js/npm
+node_modules
+npm-debug.log
+
+# Excluir archivos y carpetas generados por Angular CLI
+/dist
+/e2e
+
+# Excluir archivos y carpetas específicos que no deben estar en la imagen
+.git
+.gitignore
+Dockerfile
+.dockerignore
+
+# Excluir cualquier otro archivo o carpeta que no sea necesario en la imagen
+*.log
+*.cache
+*.lock
+*.md

@@ -1,0 +1,345 @@
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="col-md-12">
+        <div class="card-header" *ngIf="politicaSeleccionada" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <h1 class="text-primary">{{ politicaSeleccionada.nombrePolitica }}</h1>
+        </div>
+      </div>
+
+
+      <div class="row">
+        
+        <div class="col-md-3">
+         
+
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <a class="btn btn-primary btn-block mb-12"><h3>Políticas Públicas</h3></a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <!-- Contenedor con altura fija y scroll -->
+              <div class="scrollable-container" style="max-height: 800px; overflow-y: auto;">
+                
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" *ngFor="let politica of politicas">
+                        <h5 class="nav-link" (click)="mostrarPolitica(politica)">
+                          <i class="far fa-file-alt"></i> {{ politica.nombrePolitica }}
+                        </h5>
+                      </li>
+                </ul>
+              </div>
+              <!-- Fin del contenedor con altura fija y scroll -->
+          
+              
+            </div>
+            <!-- /.card-body -->
+            
+            <!-- /.card-footer -->
+          </div>
+
+          <!-- /.card -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">! De tu Interes...¡</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body p-0">
+              
+
+
+
+
+
+
+                <div class="card card-primary">
+           
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <strong><i class="fas fa-book mr-1"></i> SEMÁFOROS</strong>
+      
+                      <p class="text-muted" style="text-align: justify;"><br>
+                        Con la intención de explicar en detalle cuáles son los productos de la política que pueden estar marcando la implementación hacia un mayor o menor nivel de avance, se construyeron una serie de mediciones tipo ‘semáforo’, de forma que se pueda identificar diferentes niveles de cumplimiento desde la adopción de la política. Los productos con un avance superior a 75% frente a la meta se consideran en un nivel de cumplimiento “Alto” y tienen asignado el color verde. Aquellos que han alcanzado un avance en el rango de 51% - 75% se consideran con un nivel de cumplimiento “Medio” y se presentan en color amarillo. Por su parte, el color rojo, correspondiente a avances inferiores o iguales al 50%, se consideran con un nivel de cumplimiento “Bajo”. <br><br>
+
+                        <strong> ¿Cómo se calcula el porcentaje del avance durante la vigencia?<br></strong>
+                        Este porcentaje de avance se calcula teniendo en cuenta los reportes realizados durante el año de análisis y la meta únicamente de esa misma vigencia. La división de estos dos valores nos da el porcentaje de avance durante la vigencia<br><br>
+
+                        <strong>¿Cómo se calcula el porcentaje del avance hasta la vigencia?<br></strong>
+                        Este porcentaje de avance se calcula teniendo en cuenta todos los reportes realizados desde el inicio de ejecución de la política y la meta acumulada hasta el periodo de análisis. La división de estos dos valores nos da el porcentaje de avance hasta la vigencia.<br><br>
+
+                        <strong>¿Cómo se calcula el porcentaje del avance acumulado?<br></strong>
+                        Este porcentaje de avance se calcula teniendo en cuenta todos los reportes realizados desde el inicio de ejecución de la política y la meta acumulada hasta el año final de ejecución. La división de estos dos valores nos da el porcentaje de avance acumulado.<br><br>
+
+                      </p>
+      
+                      <hr>
+      
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+
+
+
+
+
+
+            </div>
+            <!-- /.card-body -->
+          </div>
+
+           
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-9">
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <!--<h3 class="card-title">Brechas acumuladas de las políticas </h3>-->
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                
+
+
+
+
+                    <!-- Info boxes -->
+                    <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4" *ngIf="politicaSeleccionada" >
+                          <div class="info-box">
+                            <div class="info-box-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                              <span class="info-box-text"><h3>Objetivos Específicos</h3></span>
+                              <h4 class="info-box-number">
+                                {{ politicaSeleccionada.objetivosEspecificos }}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4" *ngIf="politicaSeleccionada">
+                          <div class="info-box">
+                            <div class="info-box-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                              <span class="info-box-text"><h3>Indicadores resultado</h3></span>
+                              <h4 class="info-box-number">
+                                {{ politicaSeleccionada.indicadoresResultados }}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4" *ngIf="politicaSeleccionada">
+                          <div class="info-box">
+                            <div class="info-box-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                              <span class="info-box-text"><h3>Indicadores de producto</h3></span>
+                              <h4 class="info-box-number">
+                                {{ politicaSeleccionada.productoProducto }}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- /.row -->
+
+                    <div class="row d-flex justify-content-center">
+                      
+                      <div class="col-md-12">
+                        <div class="card-header" >
+                          <h1 class="text-primary" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">Convenciones</h1>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4 col-lg-3 col-6">
+                      
+                        <div class="small-box bg-success">
+                          <div class="inner" style="margin: 5px; padding: 1px;">
+                            <h3>+ 75%<sup style="font-size: 20px"></sup></h3>
+                            <p>Avance</p>
+                          </div>
+                          <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                          </div>
+                        
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4 col-lg-3 col-6">
+                        <div class="small-box bg-warning">
+                          <div class="inner" style="margin: 5px; padding: 1px;">
+                            <h3>50% - 75%</h3>
+                            <p>Avance</p>
+                          </div>
+                            <div class="icon">
+                              <i class="ion ion-stats-bars"></i>
+                            </div>
+                            
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-4 col-lg-3 col-6">
+                        <div class="small-box bg-danger">
+                          <div class="inner" style="margin: 5px; padding: 1px;">
+                            <h3>- 50%</h3>
+                            <p>Avance</p>
+                          </div>
+                          <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                          </div>
+                            
+                        </div>
+                      </div>
+                      
+                    </div>
+
+
+
+
+
+                    <div class="col-lg-12">
+                        <!--<div class="card">
+                        <div class="card-header border-0">
+                          <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Sales</h3>
+                            <a href="javascript:void(0);">View Report</a>
+                          </div>
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex">
+                            <p class="d-flex flex-column">
+                              <span class="text-bold text-lg">$18,230.00</span>
+                              <span>Sales Over Time</span>
+                            </p>
+                            <p class="ml-auto d-flex flex-column text-right">
+                              <span class="text-success">
+                                <i class="fas fa-arrow-up"></i> 33.1%
+                              </span>
+                              <span class="text-muted">Since last month</span>
+                            </p>
+                          </div>
+          
+                          <div class="position-relative mb-4">
+                            <canvas id="sales-chart" height="200"></canvas>
+                          </div>
+          
+                          <div class="d-flex flex-row justify-content-end">
+                            <span class="mr-2">
+                              <i class="fas fa-square text-primary"></i> This year
+                            </span>
+          
+                            <span>
+                              <i class="fas fa-square text-gray"></i> Last year
+                            </span>
+                          </div>
+                        </div>
+                      </div>-->
+                        <!-- /.card -->
+            
+                        <div class="card">
+                            <div class="card-header">
+                              <h3 class="card-title">Tabla de Semáforos de Productos</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                      <tr>
+                                        <th style="width: 10px; text-align: center; vertical-align: middle;">#</th>
+                                        <th style="text-align: center; vertical-align: middle;">Nombre Producto Esperado</th>
+                                        <th style="text-align: center; vertical-align: middle;">Sector Líder</th>
+                                        <th style="text-align: center; vertical-align: middle;">Ponderación Relativa del Producto (%)</th>
+                                        <th style="text-align: center; vertical-align: middle;">Porcentaje de Avance Durante la Vigencia</th>
+                                        <th style="text-align: center; vertical-align: middle;">Porcentaje de Avance Hasta la Vigencia</th>
+                                        <th style="text-align: center; vertical-align: middle;">Porcentaje de Avance Acumulado</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr *ngFor="let dato of datosTabla; let i = index">
+                                        <td>{{ i + 1 }}.</td>
+                                        <td>{{ dato.productoEsperado }}</td>
+                                        <td>{{ dato.sectorLider }}</td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <h3>
+                                            <span>
+                                              {{ dato.ponderacion | number:'1.0-2' }}%
+                                            </span>
+                                          </h3>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <h3>
+                                            <span [ngClass]="{
+                                              'badge': true,
+                                              'bg-success': dato.avanceVigencia > 75,
+                                              'bg-warning': dato.avanceVigencia > 50 && dato.avanceVigencia <= 75,
+                                              'bg-danger': dato.avanceVigencia <= 50
+                                            }" style="display: inline-block;">
+                                              {{ dato.avanceVigencia | number:'1.0-2' }}%
+                                            </span>
+                                          </h3>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <h3>
+                                            <span [ngClass]="{
+                                              'badge': true,
+                                              'bg-success': dato.avanceHastaVigencia > 75,
+                                              'bg-warning': dato.avanceHastaVigencia > 50 && dato.avanceHastaVigencia <= 75,
+                                              'bg-danger': dato.avanceHastaVigencia <= 50
+                                            }" style="display: inline-block;">
+                                              {{ dato.avanceHastaVigencia | number:'1.0-2' }}%
+                                            </span>
+                                          </h3>
+                                        </td>
+                                        <td style="text-align: center; vertical-align: middle;">
+                                          <h3>
+                                            <span [ngClass]="{
+                                              'badge': true,
+                                              'bg-success': dato.avanceAcumulado > 75,
+                                              'bg-warning': dato.avanceAcumulado > 50 && dato.avanceAcumulado <= 75,
+                                              'bg-danger': dato.avanceAcumulado <= 50
+                                            }" style="display: inline-block;">
+                                              {{ dato.avanceAcumulado | number:'1.0-2' }}%
+                                            </span>
+                                          </h3>
+                                        </td>
+                                        
+                                      </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer clearfix">
+                              <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                              </ul>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                    </div>
+
+
+
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              PowerBy <i>FranciscoLesmes.com</i>
+            </div>
+            <!-- /.card-footer -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->    

@@ -1,0 +1,377 @@
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="col-md-12">
+        <div class="card-header" *ngIf="politicaSeleccionada" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+          <h2 class="text-primary">{{ politicaSeleccionada.nombrePolitica }}</h2>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div class="modal-body text-center">
+                <h5 class="modal-title text-center" id="modalLabel">Recuerda</h5>
+              </div>
+              
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <h5> <b>*</b> Selecciona una Política Pública para visualizar su avance acumulado. Esta opción te brinda una perspectiva integral de cómo se está desarrollando la política que te interesa.</h5> <br>
+              <h5> <b>*</b> ¿Interesado en Gestión por Objetivos? Simplemente elige un objetivo específico para profundizar en su progreso y dinámicas.</h5>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+      <div class="row">
+
+
+        <div class="col-md-4">
+          
+
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <a class="btn btn-primary btn-block mb-12"><h3>Políticas Públicas</h3></a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <!-- Contenedor con altura fija y scroll -->
+              <div class="scrollable-container" style="max-height: 477px; overflow-y: auto;">
+                <ul class="nav nav-pills flex-column">
+                    <li class="nav-item" *ngFor="let politica of politicas">
+                        <h5 class="nav-link" (click)="mostrarPolitica(politica)">
+                          <i class="far fa-file-alt"></i> {{ politica.nombrePolitica }}
+                        </h5>
+                      </li>
+                </ul>
+              </div>
+              <!-- Fin del contenedor con altura fija y scroll -->
+          
+              
+            </div>
+            <!-- /.card-body -->
+            
+            <!-- /.card-footer -->
+          </div>
+          
+
+         
+        </div>
+        <!-- /.col -->
+
+
+        <div class="col-md-8">
+          <!-- Aquí mostramos la política seleccionada -->
+         
+         
+          
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 style="display: flex; justify-content: center; align-items: center; flex-direction: column;">Avance acumulados por política y por objetivos  </h3>
+            </div>
+            
+            <!-- /.card-header -->
+            <div class="card-body">
+                
+
+
+
+                    <!-- Info boxes -->
+                      <div class="row">
+                        <div class="col-12 col-sm-6 col-md-4" *ngIf="politicaSeleccionada" >
+                          <div class="info-box">
+                            <div class="info-box-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                              <span class="info-box-text"><h3>Objetivos Específicos</h3></span>
+                              <h4 class="info-box-number">
+                                {{ politicaSeleccionada.objetivosEspecificos }}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4" *ngIf="politicaSeleccionada">
+                          <div class="info-box">
+                            <div class="info-box-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                              <span class="info-box-text"><h3>Indicadores resultado</h3></span>
+                              <h4 class="info-box-number">
+                                {{ politicaSeleccionada.indicadoresResultados }}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-4" *ngIf="politicaSeleccionada">
+                          <div class="info-box">
+                            <div class="info-box-content" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                              <span class="info-box-text"><h3>Indicadores de producto</h3></span>
+                              <h4 class="info-box-number">
+                                {{ politicaSeleccionada.productoProducto }}
+                              </h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- /.row -->
+                    
+
+
+                    <div class="col-lg-12">
+                      <div class="card">
+                        <div class="card-header border-0">
+                          <!--<div class="d-flex justify-content-between">
+                            <h3 class="card-title">Avance Acumulado de la política pública</h3>
+                            <!--<a href="https://docs.google.com/spreadsheets/d/1N2qG9oxHeJvaFfWDYdbx6tjo4qeZmhi51XfxqsnS-kM/export?format=xlsx">Descargar Ficha</a>
+                            <a href="https://drive.google.com/uc?export=download&id=1DQ-SrXJFqTl_y5tRmEvDCY3xdIWW4EuM">Descargar Ficha</a>
+
+                            
+
+                          </div>-->
+
+                          <div class="d-flex justify-content-between">
+                            <h3 class="card-title">Avance Acumulado de la política pública</h3>
+                            <a href="https://drive.google.com/uc?export=download&id=1DQ-SrXJFqTl_y5tRmEvDCY3xdIWW4EuM" style="font-size: 20px; font-weight: bold;"><i class="fas fa-arrow-down" style="color: red;"></i> Descargar Información Complementaria</a>
+                          </div>
+                        
+                        </div>
+                        <div class="card-body">
+                          <div class="d-flex">
+                            <p class="d-flex flex-column">
+                              <!--<span class="text-bold text-lg">820</span>-->
+                              <span>Porcentaje de avance</span>
+                            </p>
+                            <p class="ml-auto d-flex flex-column text-right">
+                              <!--<span class="text-success">
+                                <i class="fas fa-arrow-up"></i> 12.5%
+                              </span>
+                              <span class="text-muted">Desde la última medición</span>-->
+                            </p>
+                          </div>
+                          <!-- /.d-flex -->
+                  
+                          <div class="position-relative mb-4">
+                            <canvas id="myChartPoliticas" height="200"></canvas>
+                          </div>
+                  
+                          <!--<div class="d-flex flex-row justify-content-end">
+                            <span class="mr-2">
+                              <i class="fas fa-square text-primary"></i> Trayectoria Ideal
+                            </span>
+                  
+                            <span>
+                              <i class="fas fa-square text-gray"></i> Avance Acumulado
+                            </span>
+                          </div>-->
+                        </div>
+                      </div>
+                      <!-- /.card -->
+                    </div>
+
+
+                   
+
+
+
+            </div>
+          </div>
+          <!-- /.card -->
+        </div>
+
+
+        <div class="col-md-4">
+          
+
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <a class="btn btn-primary btn-block mb-12"><h3>Objetivos Específicos</h3></a>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <!-- Contenedor con altura fija y scroll -->
+              <div class="scrollable-container" style="max-height: 410px; overflow-y: auto;">
+                <ul class="nav nav-pills flex-column">
+                  <li class="nav-item" *ngFor="let objetivo of objetivos">
+                    <h5 class="nav-link" (click)="mostrarObjetivo(objetivo)">
+                      <i class="far fa-file-alt"></i> {{ objetivo.nombre }}
+                    </h5>
+                  </li>
+                </ul>
+              </div>
+
+          
+              <!-- Fin del contenedor con altura fija y scroll -->
+          
+              
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+            
+            </div>
+            <!-- /.card-footer -->
+          </div>
+          
+
+         
+        </div>
+
+
+
+        <div class="col-md-8">
+          <div class="card card-primary card-outline">
+            <div class="card-header">
+              <h3 style="display: flex; justify-content: center; align-items: center; flex-direction: column;">Avance acumulados por política y por objetivos </h3>
+            </div>
+
+            <div class="card-header" *ngIf="objetivoSeleccionado" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+              <h2 class="text-primary">{{ objetivoSeleccionado.nombre }}</h2>
+            </div>
+            
+            
+            <!-- /.card-header -->
+            <div class="card-body">
+                
+
+              <div class="card">
+                <div class="card-header border-0">
+                  <div class="d-flex justify-content-between">
+                    <h3 class="card-title">Avance acumulado de objetivos por gestión de productos</h3>
+                    <!--<a href="javascript:void(0);">Descargar Ficha</a>-->
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="d-flex">
+                    <p class="d-flex flex-column">
+                      <!--<span class="text-bold text-lg">$18,230.00</span>-->
+                      <span> Porcentaje de Avance</span>
+                    </p>
+                    <p class="ml-auto d-flex flex-column text-right">
+                      <!--<span class="text-success">
+                        <i class="fas fa-arrow-up"></i> 33.1%
+                      </span>
+                      <span class="text-muted">Desde la última medición</span>-->
+                    </p>
+                  </div>
+                  <!-- /.d-flex -->
+  
+                  <div class="position-relative mb-4">
+                    <!--<canvas id="visitors-chart2" height="200"></canvas>-->
+                    <canvas id="myChartObjetivos" height="200"></canvas>
+
+                  </div>
+  
+                  <div class="d-flex flex-row justify-content-end">
+                    <span class="mr-2">
+                      <i class="fas fa-square text-primary"></i> Trayectoria Ideal
+                    </span>
+  
+                    <span>
+                      <i class="fas fa-square text-gray"></i> Avance Acumulado
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+             
+            </div>
+            <!-- /.card-footer -->
+          </div>
+          <!-- /.card -->
+
+        
+        </div>
+
+        
+
+        <div class="col-md-12">
+          <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">! De tu Interes...¡</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0">
+          
+
+
+
+
+
+
+            <div class="card card-primary">
+       
+                <!-- /.card-header -->
+                <div class="card-body">
+                  <strong><i class="fas fa-book mr-1"></i> AVANCE ACUMULADO DE LA POLÍTICA </strong>
+  
+                  
+                  <p class="text-muted" style="text-align: justify;"> <br>
+                    <strong>¿Qué es la trayectoria ideal?<br></strong>
+                    La trayectoria ideal de una política corresponde al porcentaje de avance esperado en una fecha específica. <br>
+                    <strong>¿Cómo se calcula?<br></strong>
+                    La trayectoria ideal se calcula haciendo la división entre las metas acumuladas hasta la fecha de análisis y la meta final. <br>
+                    Vínculo a los informes de seguimiento:
+                    <a href="https://www.sdp.gov.co/gestion-socioeconomica/conpes-dc/seguimiento">
+                    Seguimiento de Políticas Públicas | Secretaría Distrital de Planeación (sdp.gov.co)</a>>
+                    En la primera gráfica se realiza la comparación entre el porcentaje de avance acumulado de la Política Pública y su porcentaje de trayectoria ideal. <br>
+                    La segunda gráfica hace la misma comparación pero acumulando los indicadores por objetivo específico para poder analizar su avance acumulado frente a la trayectoria que debería llevar el objetivo.
+                    Actualmente, los avances y trayectorias ideales de las políticas y de los objetivos se calculan a partir de los indicadores de producto.
+                  </p>
+  
+                  <hr>
+  
+                </div>
+                <!-- /.card-body -->
+            </div>
+
+
+
+
+
+
+        </div>
+        <!-- /.card-body -->
+      </div>
+        </div>
+
+      
+
+
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
