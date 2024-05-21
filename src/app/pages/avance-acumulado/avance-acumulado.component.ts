@@ -319,6 +319,8 @@ objetivoSeleccionado: any;
 
 
 mostrarPolitica(politica: any) {
+
+  alert("entrio")
   this.politicaSeleccionada = politica;
 
   const objetivosQuemados = [
