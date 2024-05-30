@@ -19,14 +19,9 @@ FROM nginx:latest
 # Crear los directorios para los certificados SSL
 RUN mkdir -p /etc/nginx/ssl
 
-$(document).ready(function() {
-    // Espera 3 segundos después de cargar la página para mostrar el modal
-    setTimeout(function() {
-        var myModal = new bootstrap.Modal(document.getElementById('seleccionarTerritorialModal'), {});
-        myModal.show();
-    }, 3000); // 3000 milisegundos = 3 segundos
-});
-
+# Copiar los certificados SSL y la clave privada a su ubicación
+COPY wildcard_sdp_gov_co.cer /etc/nginx/ssl/wildcard_sdp_gov_co.cer
+COPY wildcard_sdp_gov_co.key /etc/nginx/ssl/wildcard_sdp_gov_co.key
 
 # Copia los archivos de configuración de Nginx
 COPY nginx.conf /etc/nginx/nginx.conf

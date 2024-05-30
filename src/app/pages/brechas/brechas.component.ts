@@ -204,23 +204,43 @@ export class BrechasComponent implements OnInit { // Implementa OnInit para usar
     let labels2: string[] = []; // Inicializar con un arreglo vacío o valores predeterminados
   
 
+    
+
     if (anio === 2022) {
       //alert("2022");
+
+      //Grafica brechas por politica
       data = [14.79, 12.9, 10.21, 8.11, 8.07, 7.23, 6.23, 4.48, 4.34, 4.12, 3.97, 3.25, 3.14, 3.06, 2.95, 2.1, 1.99, -0.12, -0.54, -0.77, -1.57, -3.1, -3.3, -4.47, -5.17];
       labels = ['Juventud (SDIS)', 'Cultura ciudadana (SCRD)', 'Adultez (SDIS)', 'Servicio a la ciudadanía (SGeneral)', 'Vejez (SDIS)', 'Biodiversidad (SDA)', 'Cultos (SDG)', 'Talento humano (SGeneral)', 'Transparencia (SGeneral)', 'Protección y Bienestar Animal (SDA)', 'Bicicleta (SDM)', 'Mujer (SDMujer)', 'Educación ambiental (SDA)', 'LGBTI (SDP)', 'Familias (SDIS)', 'Trata (SDG)', 'Habitabilidad en calle (SDIS)', 'Hábitat (SDH)', 'Economía cultural (SCRD)', 'Educación (SED)', 'Actividades sexuales pagadas (SDMujer)', 'Deporte (SCRD)', 'Ciencia, tecnología e innovación (SDDE)', 'Derechos humanos (SDG)', 'Seguridad alimentaria (SDDE)'];
       
 
+      //Grafica brechas por sector
       data2 =  [ 5.66, 4.62, 2.55, 1.78, 1.64, 1.39, 1.05, 0.58, 0.39, 0.31, 0.2, 0.17, 0.06, -0.38, -0.71];
       labels2 = [ 'Gestión Jurídica', 'Desarrollo Económico Industria y Turismo ', 'Salud', 'Gestión Pública ', 'Cultura, Recreación y Deporte', 'Integración Social', 'Seguridad, Convivencia y Justicia', 'Gobierno', 'Educación ', 'Movilidad', 'Ambiente', 'Hábitat', 'Planeación ', 'Mujeres', 'Hacienda']
 
     } else if (anio === 2023) {
       
-      //data = [-9.63,-6.07,-5.96,-5.66,-3.9,-3.73,-3.16,-3.02,-2.34,-2.27,-1.68,-1.44,-1.37,-0.87,-0.83,-0.58,0.37,0.81,1.07,1.57,2.56,2.58,2.58,3.03,3.13,3.76,4.07,4.31,4.6,4.98,5.08,5.25,5.32,5.59,6.41,6.46,7.35,8.73,9.04,9.62,10.6,12.82,12.84,13.86];
-      data = [13.86, 12.84, 12.82, 10.6,9.62,9.04,8.73,7.35,6.46,6.41,5.59,5.32,5.25,5.08,4.98,4.6,4.31,4.07,3.76,3.13,3.03,2.58,2.58,2.56,1.57,1.07,0.81,-0.37, -0.58, -0.83, -0.87, -1.37, -1.44, -1.68, -2.27, -2.34, -3.02, -3.16, -3.73, -3.9, -5.66, -5.96, -6.07, -9.63 ];
-      labels = [ 'Deporte (SCRD)','Movilidad (SDM)','Ciencia, tecnología e innovación (SDDE)','BTI (SGeneral)','Trabajo Decente (SDDE)','Hábitat (SDH)','Protección y Bienestar Animal (SDA)','Seguridad +Paz (SDSCJ)','Acción Climática (SDA)','Pobreza (SDP)','Vendedores Informales (SDDE)','Turismo (SDDE)','Migrantes (SDG)','Espacio Público (SDG)','Comunicación Comunitaria (SDG)','Educación (SED)','LEO (SCRD)','Acción Comunal (SDG)','Actividades sexuales pagadas (SDMujer)','Peatón (SDM)','Seguridad alimentaria (SDDE)','Infancia      (SDIS)','Economía Circular (SDA)','Servicios Públicos (SDH)','Discapacidad (SDIS)','Familias (SDIS)','Habitabilidad en calle (SDIS)','Educación ambiental (SDA)','Talento humano (SGeneral)','Bicicleta (SDM)','Cultos (SDG)','Economía cultural (SCRD)','Productividad      (SDDE)','Mujer (SDMujer)','LGBTI (SDP)','Transparencia (SGeneral)','Derechos humanos (SDG)','Vejez (SDIS)','Servicio a la ciudadanía (SGeneral)','Biodiversidad (SDA)','Adultez (SDIS)','Juventud (SDIS)','Trata (SDG)','Cultura ciudadana (SCRD)']
+      //Grafica brechas por politica
+      //data = [13.86, 12.84, 12.82, 10.6,9.62,9.04,8.73,7.35,6.46,6.41,5.59,5.32,5.25,5.08,4.98,4.6,4.31,4.07,3.76,3.13,3.03,2.58,2.58,2.56,1.57,1.07,0.81,-0.37, -0.58, -0.83, -0.87, -1.37, -1.44, -1.68, -2.27, -2.34, -3.02, -3.16, -3.73, -3.9, -5.66, -5.96, -6.07, -9.63 ];
+      //labels = [ 'Deporte (SCRD)','Movilidad (SDM)','Ciencia, tecnología e innovación (SDDE)','BTI (SGeneral)','Trabajo Decente (SDDE)','Hábitat (SDH)','Protección y Bienestar Animal (SDA)','Seguridad +Paz (SDSCJ)','Acción Climática (SDA)','Pobreza (SDP)','Vendedores Informales (SDDE)','Turismo (SDDE)','Migrantes (SDG)','Espacio Público (SDG)','Comunicación Comunitaria (SDG)','Educación (SED)','LEO (SCRD)','Acción Comunal (SDG)','Actividades sexuales pagadas (SDMujer)','Peatón (SDM)','Seguridad alimentaria (SDDE)','Infancia      (SDIS)','Economía Circular (SDA)','Servicios Públicos (SDH)','Discapacidad (SDIS)','Familias (SDIS)','Habitabilidad en calle (SDIS)','Educación ambiental (SDA)','Talento humano (SGeneral)','Bicicleta (SDM)','Cultos (SDG)','Economía cultural (SCRD)','Productividad      (SDDE)','Mujer (SDMujer)','LGBTI (SDP)','Transparencia (SGeneral)','Derechos humanos (SDG)','Vejez (SDIS)','Servicio a la ciudadanía (SGeneral)','Biodiversidad (SDA)','Adultez (SDIS)','Juventud (SDIS)','Trata (SDG)','Cultura ciudadana (SCRD)']
 
-      data2 = [7.32,7.09,6.66,4.97,4.67,4.46,2.75,2.42,2.37,1.99,0.72,0.7,0.53,-0.5,-1.13];
-      labels2 = ['Desarrollo Económico, Industria y Turismo ','Cultura, Recreación y Deporte','Gestión Jurídica','Salud','Gobierno','Mujeres','Integración Social','Ambiente','Gestión Pública','Hábitat','Planeación ','Educación ','Seguridad, Convivencia y Justicia','Movilidad','Hacienda ']
+      //Grafica brechas por sector
+      //data2 = [7.32,7.09,6.66,4.97,4.67,4.46,2.75,2.42,2.37,1.99,0.72,0.7,0.53,-0.5,-1.13];
+      //labels2 = ['Desarrollo Económico, Industria y Turismo ','Cultura, Recreación y Deporte','Gestión Jurídica','Salud','Gobierno','Mujeres','Integración Social','Ambiente','Gestión Pública','Hábitat','Planeación ','Educación ','Seguridad, Convivencia y Justicia','Movilidad','Hacienda ']
+
+
+      
+
+
+
+      //Grafica brechas por politica
+      data =  [13.86,12.84,12.82,10.6,9.62,9.04,8.73,7.35,6.46,6.41,5.59,5.32,5.25,5.08,4.98,4.6,4.31,4.07,3.76,3.13,3.03,2.58,2.58,1.92,1.57,1.07,0.37,-0.58,-0.83,-0.87,-1.37,-1.44,-1.68,-2.27,-2.34,-3.02,-3.16,-3.73,-3.9,-5.66,-5.96,-6.07,-9.63,-12.12];
+      labels = [ 'Cultura ciudadana (SCRD)','Trata (SDG)','Juventud (SDIS)','Adultez (SDIS)','Biodiversidad (SDA)','Servicio a la ciudadanía (SGeneral)','Vejez (SDIS)','Derechos humanos (SDG)','Transparencia (SGeneral)','LGBTI (SDP)','Mujer (SDMujer)','Productividad (SDDE)','Economía cultural (SCRD)','Cultos (SDG)','Bicicleta (SDM)','Talento humano (SGeneral)','Educación ambiental (SDA)','Habitabilidad en calle (SDIS)','Familias (SDIS)','Discapacidad (SDIS)','Servicios Públicos (SDH)','Economía Circular (SDA)','Infancia (SDIS)','Seguridad alimentaria (SDDE)','Peatón (SDM)','Actividades sexuales pagadas (SDMujer)','LEO (SCRD)','Educación (SED)','Comunicación Comunitaria (SDG)','Espacio Público (SDG)','Migrantes (SDG)','Turismo (SDDE)','Vendedores Informales (SDDE)','Pobreza (SDP)','Acción Climática (SDA)','Seguridad +Paz (SDSCJ)','Protección y Bienestar Animal (SDA)','Hábitat (SDH)','Trabajo Decente (SDDE)','BTI (SGeneral)','Ciencia, tecnología e innovación (SDDE)','Movilidad (SDM)','Deporte (SCRD)','Acción Comunal (SDG)']
+
+      //Grafica brechas por sector
+      data2 = [7.34,7.13,6.66,5.22,4.46,3.87,2.71,2.38,2.38,2,0.84,0.72,0.54,-0.53,-1.13];
+      labels2 = ['Cultura, Recreación y Deporte','Desarrollo Económico, Industria y Turismo ','Gestión Jurídica','Salud','Mujeres','Gobierno','Integración Social','Gestión Pública','Ambiente','Hábitat','Educación ','Planeación','Seguridad, Convivencia y Justicia','Movilidad','Hacienda']
+
 
     }
 
